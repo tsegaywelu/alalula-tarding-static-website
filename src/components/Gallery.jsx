@@ -1,14 +1,19 @@
 import React from "react";
 
 const Gallery = () => {
+  const images = ["./images/td1.PNG", "./images/td2.PNG", './images/tdf3.PNG','./images/td12.PNG',
+  './images/td4.PNG','./images/td5.PNG','./images/td6.PNG',
+  './images/td7.PNG','./images/td8.PNG','./images/td9.PNG','./images/td10.PNG',
+  './images/td11.PNG','./images/abserawit1.PNG'
+  ];
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
  
  <div className="group cursor-pointer relative">
    <img
-     src="./trade.PNG"  /* what is the problem here */
-     alt="Image 1"
+     src={images[0]}  // Replace `0` with the index of the image you want to display
+     alt={`Image ${1}`}  // Replace `1` with the index of the image you want to display
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -20,8 +25,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw5fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+    src={images[1]}  // Replace `0` with the index of the image you want to display
+    alt={`Image ${2}`}  
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -33,8 +38,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1501854140801-50d01698950b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMHx8bmF0dXJlfGVufDB8MHx8fDE2OTQwOTk3Mjl8MA&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+   src={images[2]}  // Replace `0` with the index of the image you want to display
+   alt={`Image ${3}`} 
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -46,8 +51,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwyfHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+    src={images[3]}  // Replace `0` with the index of the image you want to display
+    alt={`Image ${4}`}  
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -59,8 +64,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxNHx8bmF0dXJlfGVufDB8MHx8fDE2OTQwOTk3Mjl8MA&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+    src={images[4]}  // Replace `0` with the index of the image you want to display
+    alt={`Image ${5}`}  
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -72,8 +77,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMXx8bmF0dXJlfGVufDB8MHx8fDE2OTQwOTk3Mjl8MA&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+      src={images[5]}  // Replace `0` with the index of the image you want to display
+      alt={`Image ${6}`}
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -85,8 +90,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw0fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+    src={images[6]}  // Replace `0` with the index of the image you want to display
+    alt={`Image ${7}`}
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -98,8 +103,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+    src={images[7]}  // Replace `0` with the index of the image you want to display
+    alt={`Image ${8}`}
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -111,8 +116,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw3fHxuYXR1cmV8ZW58MHwwfHx8MTY5NDA5OTcyOXww&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+     src={images[7]}  // Replace `0` with the index of the image you want to display
+     alt={`Image ${8}`}
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -124,8 +129,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1419133203517-f3b3ed0ba2bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxyaXZlcnxlbnwwfDB8fHwxNjk0MDk5ODgyfDA&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+    src={images[8]}  // Replace `0` with the index of the image you want to display
+    alt={`Image ${9}`}
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -137,8 +142,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1498855926480-d98e83099315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw4fHxyaXZlcnxlbnwwfDB8fHwxNjk0MDk5ODgyfDA&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+    src={images[9]}  // Replace `0` with the index of the image you want to display
+    alt={`Image ${10}`}
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -150,8 +155,8 @@ const Gallery = () => {
 
  <div className="group cursor-pointer relative">
    <img
-     src="https://images.unsplash.com/photo-1502754400466-c87ff3039da7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMXx8cml2ZXJ8ZW58MHwwfHx8MTY5NDA5OTg4Mnww&ixlib=rb-4.0.3&q=80&w=1080"
-     alt="Image 1"
+    src={images[10]}  // Replace `0` with the index of the image you want to display
+    alt={`Image ${11}`}
      className="w-full h-48 object-cover rounded-lg transition-transform transform scale-100 group-hover:scale-105"
    />
    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">

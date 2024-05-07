@@ -1,233 +1,33 @@
-import React, { useEffect, useState, useContext } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, {useEffect,useContext} from "react";
 import "./Homeslider.css";
 import { LanguageContext } from "../components/contextprovider/Language";
-import { UserTypeContext } from "../components/contextprovider/Usertype";
 
-import API from "./Utility/API";
-import Divider from "./Divider";
+import {HomeSlider} from "./Homeslider";
 
 // Define NextArrow and PrevArrow components outside of the Home component
-const NextArrow = ({ onClick }) => {
-  return (
-    <div className="slick-arrow slick-next" onClick={onClick}>
-      Next
-    </div>
-  );
-};
 
-const PrevArrow = ({ onClick }) => {
-  return (
-    <div className="slick-arrow slick-prev" onClick={onClick}>
-      Prev
-    </div>
-  );
-};
+
+
 
 const Home = () => {
-  const {userType} = useContext(UserTypeContext)
-  console.log(userType.username);
+
+
+  
+
+
+
   const { contextData } = useContext(LanguageContext);
-  const [news, setNews] = useState([]);
-  const [events, setevents] = useState([]);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const [sliderAutoplay, setSliderAutoplay] = useState(true);
-  const [av,sav] = useState(0)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Increment av by 1, and reset to 0 if it reaches the end
-      sav(p => (p + 1 >= news.length ? 0 : p + 1));
-    }, 1000);
   
-    // Cleanup function to clear the interval when component unmounts
-    return () => clearInterval(interval);
-  }, [news.length]); // Add news.length as a dependency
-  
-  // Reset av to 0 when news changes to ensure the slideshow starts from the beginning
-  useEffect(() => {
-    sav(0);
-  }, [news]);
-  
-  //to load videos and images from post database
-  useEffect(() => {
-    API.getnews()
-      .then((res) => {
-        //console.log(res);
-        setNews(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  //to load events and advertisments from event database
-  useEffect(() => {
-    API.getevents()
-      .then((res) => {
-        //console.log(res);
-        setevents(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 100,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: sliderAutoplay, // Autoplay controlled by sliderAutoplay state
-    autoplaySpeed: 5000,
-    pauseOnHover: false, // Disable hover pause behavior
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    beforeChange: (oldIndex, newIndex) => {
-      // Check if video is playing and pause the slider
-      if (isVideoPlaying) {
-        setSliderAutoplay(false); // Pause autoplay if video is playing
-      }
-    },
-    afterChange: () => {
-      // Resume slider after video is finished playing
-      if (!isVideoPlaying) {
-        setSliderAutoplay(true); // Resume autoplay if video is not playing
-      }
-    },
-  };
-
-  const handleVideoPlay = () => {
-    setIsVideoPlaying(true);
-    setSliderAutoplay(false); // Pause autoplay when video starts playing
-  };
-
-  const handleVideoPause = () => {
-    setIsVideoPlaying(false);
-    setSliderAutoplay(true); // Resume autoplay when video pauses
-  };
-
   return (
     <div>
-      <div className="overflow-hidden flex gap-3 ">
-        <Slider {...settings} className="overflow-hidden w-2/3">
-          {news.map((n, index) => (
-            <div key={index}>
-              {n?.imageUrl.includes("mp4") || n?.imageUrl.includes("mkv") ? (
-                <video
-                  className="w-full"
-                  style={{
-                    height: "auto",
-                    maxWidth: "100%",
-                    maxHeight: "400px",
-                  }}
-                  src={`http://localhost:3000/public/${n?.imageUrl}`}
-                  controls
-                  onMouseEnter={() => setSliderAutoplay(false)} // Pause autoplay on mouse enter
-                  onMouseLeave={() => setSliderAutoplay(true)} // Resume autoplay on mouse leave
-                  onClick={handleVideoPlay}
-                  onPause={handleVideoPause} // Handle pause event
-                ></video>
-              ) : (
-                <img
-                  className="w-full"
-                  style={{
-                    height: "auto",
-                    maxWidth: "100%",
-                    maxHeight: "400px",
-                  }}
-                  src={`http://localhost:3000/public/${n?.imageUrl}`}
-                  alt={n.Title}
-                  onMouseEnter={() => setSliderAutoplay(false)} // Pause autoplay on mouse enter
-                  onMouseLeave={() => setSliderAutoplay(true)} // Resume autoplay on mouse leave
-                />
-              )}
-                {/* <h3 className="text-2xl font-bold text-gray-950  float-center mb-2 ml-5">{n?.Title}</h3>  */}
-              {/* <p className="text-xl">{n?.description}    <i className="float-end text-sm">7 days ago</i></p>  */}
-              {/*   <textarea
-                name="comment"
-                id="comments"
-                cols="20"
-                rows="2"
-                placeholder={
-                  contextData.Language == "English"
-                    ? "  write your comment here"
-                    : "ረኢቶኦም አብዚ ይጽሓፍልና"
-                }
-                className="bg-gray-50 w-full text-black font-bold rounded-lg p-2 border-blue-200 border-x-2"
-              ></textarea>
-              <button
-                className="w-full flex justify-center py-2 px-4 border
-             border-transparent text-sm font-medium rounded-md text-white
-              bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 
-              focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150
-               ease-in-out"
-              >
-                post
-              </button> */}
-            </div>
-          ))}
-        </Slider>
+      <HomeSlider />
 
-          <div className="  w-1/3  h-full p-2 " >
-        
-          <h3 className="text-lg font-bold flex justify-center align-middle relative ">
-            {contextData.Language == "English"
-              ? "  advertisements"
-              : "ምህርቶም ምሳና የላሉዩ"}
-          </h3>
-          <div>
-           
-            <a href="">
-              <p className=" ">
-              {console.log('logging',news[av],av)}
-            <div>
-              {news[av]?.imageUrl.includes("mp4") || news[av]?.imageUrl.includes("mkv") ? (
-                <video
-                  className="w-full"
-                  style={{
-                    height: "auto",
-                    maxWidth: "100%",
-                    maxHeight: "400px",
-                  }}
-                  src={`http://localhost:3000/public/${news[av]?.imageUrl}`}
-                  controls
-                  onMouseEnter={() => setSliderAutoplay(false)} // Pause autoplay on mouse enter
-                  onMouseLeave={() => setSliderAutoplay(true)} // Resume autoplay on mouse leave
-                  onClick={handleVideoPlay}
-                  onPause={handleVideoPause} // Handle pause event
-                ></video>
-              ) : (
-                <img
-                  className="w-full"
-                  style={{
-                    height: "auto",
-                    maxWidth: "100%",
-                    maxHeight: "400px",
-                  }}
-                  src={`http://localhost:3000/public/${news[av]?.imageUrl}`}
-                  alt={news[av]?.Title}
-                  onMouseEnter={() => setSliderAutoplay(false)} // Pause autoplay on mouse enter
-                  onMouseLeave={() => setSliderAutoplay(true)} // Resume autoplay on mouse leave
-                />
-              )}
-               <h3 className="text-2xl font-bold text-gray-950  float-center mb-2 ml-5">{news[av]?.Title}</h3> 
-             {/*  <p className="text-xl">{n?.description}    <i className="float-end text-sm">7 days ago</i></p> */} 
-              
-            </div>
-        
-              </p>
-            </a>
-          </div>
-        </div>  
-
-      </div>
-  
-  
-      <h1 className="text-2xl font-bold flex justify-center align-middle relative  ">{contextData.Language == "English" ? "member of the accositation" : "አባላት እዚ ማሕበር"}</h1>
-      <div>
-        <ul className="grid gap-8 grid-cols-2 lg:grid-cols-3 overflow-hidden mt-14 ">
+     
+      <div className="bg-gray-100">
+      <h1 className="text-2xl  flex justify-center align-middle relative  "><i>
+        {contextData.Language == "English" ? "members of the accositation" : "አባላት እዚ ማሕበር"}</i>
+      </h1>
+        <ul className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-hidden mt-14 ">
           
             <li className="relative bg-white flex flex-col border rounded shadow-md hover:shadow-primary-400">
               <a className="relative" href="#">
