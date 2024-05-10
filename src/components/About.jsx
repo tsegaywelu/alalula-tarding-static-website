@@ -10,8 +10,8 @@ const About = () => {
   //console.log("your language is" + contextData.Language);
   return (
     <div className="lg:mt-3   mt-3  ">
-      <section className=" flex gap-3 flex-col">
-        <div className="py-3 bg-white">
+      <section className=" flex gap-3 flex-col lg:flex-row w-full">
+        <div className="py-3 w-full bg-white lg:w-[70%] ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="">
               <p className="font-heading mt-2 text-3xl leading-8 font-semibold tracking-tight text-green-900 sm:text-4xl lg:text-center">
@@ -64,13 +64,13 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className=" lg:mt-4  flex flex-col">
-          <div>
+        <div className=" lg:mt-4 w-full lg:w-[30%]   ">
+          <div className=" w-full ">
             <img src="./allula.PNG" alt="" />
           </div>
-        </div>
-        <div>
-          <img src="./cert.jpg" alt="" />
+          <div className="w-full ">
+            <img src="./cert.jpg" alt="" />
+          </div>
         </div>
       </section>
     </div>
