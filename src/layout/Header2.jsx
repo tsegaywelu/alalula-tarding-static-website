@@ -20,13 +20,13 @@ const Header = () => {
       >
         <div className="flex flex-col">
           <img
-            src="./logo4.png"
+            src="./log1.PNG"
             alt="image loading"
-            width={50}
-            height={50}
-            className="flex-grow-0 "
+            width={70}
+            height={70}
+            className="flex-grow-0 rounded-full"
           />
-          <i className="text-blue-700"> ህንፀት ኩለ መዳይ ማእኸል ዕዳጋ ኣሉላ</i>
+          <i className="text-blue-700 text-sm"> ህንፀት ኩለ መዳይ ማእኸል ዕዳጋ ኣሉላ</i>
         </div>
         {isMenuOpen ? (
           <FaTimes
