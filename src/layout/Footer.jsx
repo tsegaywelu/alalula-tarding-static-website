@@ -260,11 +260,8 @@ const Footer = () => {
           </div>
           <div className="my-5">
             developed by{" "}
-            <a
-              href="https://www.github.com/tsegaywelu "
-              className="text-blue-700"
-            >
-              tsegay welu©
+            <a href="/#" className="text-blue-700">
+              AfroTech Solutions PLC
             </a>{" "}
             Copyright 2024. All Rights Reserved.
           </div>
