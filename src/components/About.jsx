@@ -9,8 +9,8 @@ const About = () => {
 
   //console.log("your language is" + contextData.Language);
   return (
-    <div className="lg:mt-10   mt-3">
-      <section className=" flex gap-3">
+    <div className="lg:mt-10   mt-3  ">
+      <section className=" flex gap-3 flex-col">
         <div className="py-3 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="">
@@ -64,13 +64,13 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className=" lg:mt-4  flex">
+        <div className=" lg:mt-4  flex flex-col">
           <div>
             <img src="./allula.PNG" alt="" />
           </div>
-          <div>
-            <img src="./cert.jpg" alt="" />
-          </div>
+        </div>
+        <div>
+          <img src="./cert.jpg" alt="" />
         </div>
       </section>
     </div>
