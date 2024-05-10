@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
           <div className="p-5">
             <h3 className="font-bold text-xl text-indigo-600">
-              ማሕበር ህንፀት ዘመናዊ ማእኸል ዕዳጋ(ሞል) ኣሉላ
+              ህንፀት ኩለ መዳይ ማእኸል ዕዳጋ ኣሉላ
             </h3>
             <div>
               <a className="my-3 block" href="/">
@@ -24,24 +24,11 @@ const Footer = () => {
           </div>
 
           <div className="p-5">
-            <div className="text-sm uppercase text-indigo-600 font-bold">
-              pages
-            </div>
             <div className="flex gap-10">
               <div>
-                <a className="my-3 block" href="/">
-                  home <span className="text-teal-600 text-xs p-1"></span>
-                </a>
-                <a className="my-3 block" href="/about">
-                  about us <span className="text-teal-600 text-xs p-1"></span>
-                </a>
-                <a className="my-3 block" href="/contact">
-                  contact us{" "}
-                  <span className="text-teal-600 text-xs p-1">New</span>
-                </a>
-              </div>
-
-              <div>
+                <div className="text-sm uppercase text-indigo-600 font-bold">
+                  pages
+                </div>
                 <a className="my-3 block" href="/news">
                   news <span className="text-teal-600 text-xs p-1"></span>
                 </a>
@@ -76,7 +63,7 @@ const Footer = () => {
               አድራሻና
             </div>
             <a className="my-3 block" href="/#">
-              <span className="text-indigo-600 text-xs p-1 hover:text-indigo-950">
+              <span className="text-indigo-600 text-xl p-2 hover:text-indigo-950">
                 ዋና ቤት ፅሕፈትና፥ ከተማ መቐለ፣ ጥቓ ትግራይ ኣርት ኮሌጅ፣ፎቶ ደስታ ኣብ ዝርከበሉ ህንፃ ካልኣይ
                 ደብሪ
               </span>

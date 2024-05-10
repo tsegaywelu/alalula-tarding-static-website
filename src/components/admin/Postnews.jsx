@@ -6,14 +6,12 @@ import { useNavigate } from "react-router-dom";
 
 const Postnews = () => {
   const [load, setload] = useState(false);
-  //here i will navigate to login page if there is no token on local storage
   const naviagete = useNavigate();
   const token = localStorage.getItem("token");
-  const [submiting,setsubmiting]=useState(false)
+  const [submiting, setsubmiting] = useState(false);
   useEffect(() => {
-
     if (!token) {
-      return naviagete("/login");
+      //return naviagete("/login");
     }
     setload(true);
     ApI.checktoken(token)
@@ -21,14 +19,14 @@ const Postnews = () => {
         console.log("gggg", data);
         if (data.status !== 200) {
           setload(false);
-          return naviagete("/login");
+          //return naviagete("/login");
         }
         setload(false);
         return;
       })
       .catch((err) => {
         setload(false);
-        return naviagete("/login");
+        //return naviagete("/login");
       });
   }, [token]);
 
@@ -41,37 +39,42 @@ const Postnews = () => {
   function postsender(e) {
     e.preventDefault();
     setsubmiting(true);
-    if(Uploaddatas.Title==''||Uploaddatas.description=='' ||Uploaddatas.myfile ===''){
-       return alert('please fill all the required filds correctlly');
+    if (
+      Uploaddatas.Title == "" ||
+      Uploaddatas.description == "" ||
+      Uploaddatas.myfile === ""
+    ) {
+      return alert("please fill all the required filds correctlly");
     }
-    
+
     const fd = new FormData();
     Object.entries(Uploaddatas).forEach(([key, value]) => {
       fd.append(key, value);
     });
     console.log(fd);
-    ApI.addnews(fd).then((data) => {
-
-      console.log(data);
-      setsubmiting(false)
-    }).catch(e=>{
-      //console.log(e)  the whole error
-      console.log(e.response.data); //the res.send message only
-      //console.log(e.message); //error message only
-      
-      
-    });
+    ApI.addnews(fd)
+      .then((data) => {
+        console.log(data);
+        setsubmiting(false);
+      })
+      .catch((e) => {
+        //console.log(e)  the whole error
+        console.log(e.response.data); //the res.send message only
+        //console.log(e.message); //error message only
+      });
   }
 
-  return load ? (
-    "loding..."
-  ) : (
+  return (
     <div>
       <form
         className="max-w-md mx-auto mt-16 p-4 bg-white shadow rounded"
         encType="multipart/form-data"
       >
         <h2 className="text-2xl font-bold mb-4">upload video or image</h2>
+        <h1 className="text-red-600 text-4xl">
+          እዚ ሶፍትዌር ገና አብስራሕ እዩ ዘሎ በይዘአም ብትዕግስቲ ይጸበዩና!!
+        </h1>
+        <h1 className="text-green-500 text-4xl">ምስ ይቅርታ!</h1>
         <div className="mb-4">
           <label htmlFor="name" className="block mb-1">
             Title
@@ -86,7 +89,9 @@ const Postnews = () => {
               setUploaddatas((p) => ({ ...p, Title: e.target.value }))
             }
           />
-          {Uploaddatas.Title==''&&submiting&&<small className="text-red-700">this field is required!</small>}
+          {Uploaddatas.Title == "" && submiting && (
+            <small className="text-red-700">this field is required!</small>
+          )}
         </div>
         <div className="mb-4">
           <label htmlFor="description" className="block mb-1">
@@ -102,7 +107,9 @@ const Postnews = () => {
               setUploaddatas((p) => ({ ...p, description: e.target.value }))
             }
           />
-          {Uploaddatas.description==''&& submiting&&<small className="text-red-700">this field is required!</small>}
+          {Uploaddatas.description == "" && submiting && (
+            <small className="text-red-700">this field is required!</small>
+          )}
         </div>
 
         <div className="mb-4">
@@ -126,7 +133,9 @@ const Postnews = () => {
               setUploaddatas((p) => ({ ...p, myfile: e.target.files[0] }))
             }
           />
-          {Uploaddatas.myfile==''&&submiting&&<small className="text-red-700">this field is required!</small>}
+          {Uploaddatas.myfile == "" && submiting && (
+            <small className="text-red-700">this field is required!</small>
+          )}
         </div>
 
         <button

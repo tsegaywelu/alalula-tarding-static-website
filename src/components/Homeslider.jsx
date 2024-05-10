@@ -4,12 +4,12 @@ import "./Homeslider.css";
 
 export const HomeSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = ["./td1.PNG", "./td2.PNG", "./tdf3.PNG"]; // Add your image URLs here
+  const images = ["./td1.PNG", "./td2.PNG", "./tdf3.PNG", "cert.jpg"]; // Add your image URLs here
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 1000); // Change image every 5 seconds (adjust this value as needed)
+    }, 3000); // Change image every 5 seconds (adjust this value as needed)
 
     // Clear interval on component unmount
     return () => clearInterval(intervalId);
@@ -24,7 +24,6 @@ export const HomeSlider = () => {
           style={{
             height: "auto",
             maxWidth: "100%",
-            
           }}
           src={images}
           alt={`Slider image ${index + 1}`}

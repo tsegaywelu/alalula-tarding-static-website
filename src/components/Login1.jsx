@@ -31,26 +31,29 @@ const Login1 = () => {
         //   username: data.data.username,
         //   token: data.data.token,
         //    useremail: data.data.useremail,
-        // }); 
-        
+        // });
+
         setcontextData((d) => ({ ...d, token: data.data.token }));
         //i am making the usertypeconext.jsx  useless  because when page refresh every thing becomes empty
 
-        localStorage.setItem("userType",data.data.type)
-        localStorage.setItem("username",data.data.username)
-        localStorage.setItem("useremail",data.data.useremail)
-     
+        localStorage.setItem("userType", data.data.type);
+        localStorage.setItem("username", data.data.username);
+        localStorage.setItem("useremail", data.data.useremail);
+
         localStorage.setItem("token", data.data.token);
         navigate("/", { replace: true });
       }
     });
   }
   return (
-    
     <div className="bg-gray-50">
       f <div className="mb-20 bg-red-600 "> </div>
       <div className="min-h-screen bg-gray-50 flex flex-col justify-middle py-0 sm:px-6 lg:px-8 ">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
+          <h1 className="text-red-600 text-4xl">
+            እዚ ሶፍትዌር ገና አብስራሕ እዩ ዘሎ በይዘአም ብትዕግስቲ ይጸበዩና!!
+          </h1>
+          <h1 className="text-green-500 text-4xl">ምስ ይቅርታ!</h1>
           <h2 className="mt-0 text-center text-3xl leading-9 font-extrabold text-gray-900">
             login to your account
           </h2>
