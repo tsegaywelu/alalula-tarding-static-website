@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import API from "./Utility/API";
+import Map from "./Map";
 const Contact = () => {
   const [messages, setmessages] = useState({
     name: "",
@@ -30,9 +31,11 @@ const Contact = () => {
             <div className="grid md:grid-cols-2">
               <div className="h-full pr-6">
                 <p className="mt-3 mb-12 text-lg text-black dark:text-black">
-                  className aptent taciti sociosqu ad litora torquent per
-                  conubia nostra, per inceptos himenaeos. Duis nec ipsum orci.
-                  Ut scelerisque sagittis ante, ac tincidunt sem venenatis ut.
+                  ማሕበርና ህንፀት ኩለመዳይ ዕዳጋ ማእኸል ኣሉላ ሕጋዊ ሰውነት ረኺባ ተመስሪታ ኣላ። ማሕበር ብናይ
+                  ኣባላታ ሰናይ ድሌት ዝተመስረተት ማሕበር እንትትኸውን ኣባላታ ድማ ህልዊ ኣብ ሰራዊት ዘለዉ፣
+                  ብኽብሪ ዝተሰናበቱ ሓርበኛታትን ስድራ ስውኣትን ዝሓዘት ማሕበር እያ። ማሕበርና ካብ ብረታዊ ቃልሲ
+                  ዘይነኣኣስ ኣብ ኢኮኖምያዊ ምንቅስቓስ እውን ናይ ባዕላ ኣወንታዊ ተራ ንኽትፃወት ተመስሪታ ኣብ
+                  ዝለዓለ ወነን ምንቅስቓስ ዘላ ማሕበር እያ። !
                 </p>
                 <ul className="mb-6 md:mb-0">
                   <li className="flex">
@@ -234,7 +237,7 @@ const Contact = () => {
         </div>
       </section>
       {/* //here i will display map of the office location */}
-      <div id="map" name="map"></div>
+      <Map />
     </div>
   );
 };
