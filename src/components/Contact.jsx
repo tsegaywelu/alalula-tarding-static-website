@@ -24,17 +24,7 @@ const Contact = () => {
       <section className="bg-white-700  " id="contact">
         <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-2 lg:py-2">
           <div className="mb-0">
-            <div className="mb-0 max-w-3xl text-center sm:text-center md:mx-auto md:mb-0">
-              <p className="text-2xl font-semibold  tracking-wide text-black  dark:text-black">
-                we are here to help you please Contact us.
-              </p>
-              <h2 className="font-heading mb-1 font-bold tracking-tight text-gray-900 dark:text-black text-1xl sm:text-1xl">
-                Get in Touch
-              </h2>
-              <p className="mx-auto mt-1 max-w-3xl text-xl text-black dark:text-black">
-                In hac habitasse platea dictumst
-              </p>
-            </div>
+            <div className="mb-0 max-w-3xl text-center sm:text-center md:mx-auto md:mb-0"></div>
           </div>
           <div className="flex items-stretch justify-center">
             <div className="grid md:grid-cols-2">
@@ -243,6 +233,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      {/* //here i will display map of the office location */}
+      <div id="map" name="map"></div>
     </div>
   );
 };

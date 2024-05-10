@@ -38,12 +38,13 @@ const About = () => {
                 ሃኒፃ ኣብ ኢኮኖምያዊ ረብሓ ኣባላታን ትግራይ ናይ ባዕላ ኣወንታዊ ተራ ንኽትፃወት ትንቀሳቐስ ዘላ
                 ማሕበር እያ።
                 <br />
+                <br />
                 <div>
                   <i className="text-blue-700 text-2xl block text-center">
                     <FontAwesomeIcon icon="fa-solid fa-user" />
-                    <FontAwesomeIcon icon={faUsers} /> ኣባላት እዛ ማሕባር
+                    <FontAwesomeIcon icon={faUsers} /> ኣባላት እዛ ማሕባር <br />
                   </i>
-
+                  <br />
                   <div className="mx-auto " style={{ width: "40%" }}>
                     <FontAwesomeIcon icon={faUser} /> ሕዚ ኣብ ሰራዊት ዘለዉ <br />
                     <FontAwesomeIcon icon={faUser} /> ብኽበሪ ዝተሰናበቱ
@@ -65,7 +66,7 @@ const About = () => {
           </div>
         </div>
         <div className=" lg:mt-4 w-full lg:w-[30%]   ">
-          <div className=" w-full ">
+          <div className=" w-full  ">
             <img src="./allula.PNG" alt="" />
           </div>
           <div className="w-full ">
