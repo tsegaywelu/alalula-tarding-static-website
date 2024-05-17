@@ -17,7 +17,7 @@ const Home = () => {
 
       <div className="bg-gray-100">
         <h1 className="text-2xl  flex justify-center align-middle relative  ">
-          <i>
+          <i className="mt-4">
             {" "}
             <FontAwesomeIcon icon={faUsers} className="text-yellow-800" />
             {contextData.Language == "English"
