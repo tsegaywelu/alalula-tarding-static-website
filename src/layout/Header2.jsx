@@ -63,9 +63,7 @@ const Header = () => {
           <Link to="/chat">
             {contextData.Language === "English" ? "Chat" : "መልእክቲ ይጽሓፉ"}
           </Link>
-          <Link to="/postnews">
-            {contextData.Language === "English" ? "Post News" : "ዜና የእትው"}
-          </Link>
+
           {contextData.token ? (
             <Link to="/logout">
               {contextData.Language === "English" ? "Logout" : "ውጣ"}

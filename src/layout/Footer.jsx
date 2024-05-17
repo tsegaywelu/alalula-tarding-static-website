@@ -263,7 +263,7 @@ const Footer = () => {
             <a href="/#" className="text-blue-700">
               AfroTech Solutions PLC
             </a>{" "}
-            Copyright 2024. All Rights Reserved.
+            phone:0914165264 Copyright 2024. All Rights Reserved.
           </div>
         </div>
       </div>
