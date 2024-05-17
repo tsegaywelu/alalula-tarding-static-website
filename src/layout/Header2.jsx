@@ -15,7 +15,7 @@ const Header = () => {
       {/* fixed top-0 left-0 right-0 bg-white z-10 say this to meake it fixed  */}
       <div
         className={
-          "flex justify-between p-3 items-start space-x-3   shadow-lg gap-10 "
+          "flex justify-between p-3 items-start space-x-3   shadow-lg gap-5  bg-green-700"
         }
       >
         <div className="flex flex-col">
@@ -41,7 +41,7 @@ const Header = () => {
         )}
         {/* Header links */}
         <div
-          className={`flex-grow flex items-center justify-center  lg:flex lg:justify-evenly lg:flex-row  ${
+          className={`flex-grow flex items-center justify-center  lg:flex lg:justify-evenly lg:flex-row bg-red-600  ${
             isMenuOpen ? "flex flex-col gap-4 " : "hidden "
           }`}
         >
@@ -52,17 +52,18 @@ const Header = () => {
             {contextData.Language === "English" ? "About Us" : "ብዛዕባና"}
           </Link>
           <Link to="/contact">
-            {contextData.Language === "English" ? "Contact Us" : "ይርከቡና"}
+            {contextData.Language === "English" ? "Contacts Us" : "ይርከቡና"}
           </Link>
           <Link to="/gallery">
             {contextData.Language === "English" ? "Gallery" : "ምስሊታት"}
           </Link>
           <Link to="./news">
-            {contextData.Language === "English" ? "News" : "ሓዱሽ ሓበሬታ"}
+            {contextData.Language === "English" ? "News" : "ዜና"}
           </Link>
           <Link to="/chat">
-            {contextData.Language === "English" ? "Chat" : "መልእክቲ ይጽሓፉ"}
+            {contextData.Language === "English" ? "Chat" : "ብጽሑፍ"}
           </Link>
+          <div></div>
 
           {contextData.token ? (
             <Link to="/logout">

@@ -68,14 +68,6 @@ const Footer = () => {
                 ደብሪ
               </span>
             </a>
-            <a
-              className="my-3 block   hover:text-indigo-950"
-              href="https://www.goldenbic.biz"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="text-teal-600  p-1">www.goldenbic.biz</span>
-            </a>
           </div>
         </div>
       </div>
