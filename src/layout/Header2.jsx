@@ -15,7 +15,7 @@ const Header = () => {
       {/* fixed top-0 left-0 right-0 bg-white z-10 say this to meake it fixed  */}
       <div
         className={
-          "flex justify-between p-3 items-start space-x-3   shadow-lg gap-5  bg-green-700"
+          "flex justify-between p-3 items-start space-x-3   shadow-lg gap-5  "
         }
       >
         <div className="flex flex-col">
@@ -41,7 +41,7 @@ const Header = () => {
         )}
         {/* Header links */}
         <div
-          className={`flex-grow flex items-center justify-center  lg:flex lg:justify-evenly lg:flex-row bg-red-600  ${
+          className={`flex-grow flex items-center justify-center  lg:flex lg:justify-evenly lg:flex-row  ${
             isMenuOpen ? "flex flex-col gap-4 " : "hidden "
           }`}
         >
